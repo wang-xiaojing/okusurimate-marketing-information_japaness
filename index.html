@@ -3,310 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Store 審査提出用マーケティング情報 - OkusuriMate</title>
+    <title>OkusuriMate（おくすりメイト）- 服薬リマインダーアプリ</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
-            line-height: 1.8;
+            line-height: 1.9;
             color: #333;
+            background: #f7f8fa;
+        }
+
+        /* ヘッダー */
+        .header {
+            background: linear-gradient(135deg, #4A90D9 0%, #6CB4EE 100%);
+            color: #fff;
+            text-align: center;
+            padding: 64px 16px 56px;
+        }
+        .header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 28px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 2.0em;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        .header .subtitle {
+            font-size: 1.1em;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+        .header .badges {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .header .badge {
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 0.85em;
+        }
+
+        /* メイン */
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 24px 16px 80px;
-            background: #fafbfc;
+            padding: 0 16px;
         }
-        h1 {
+
+        /* セクション */
+        section {
+            background: #fff;
+            border-radius: 16px;
+            padding: 36px 28px;
+            margin: 28px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        section h2 {
+            font-size: 1.35em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        section h3 {
+            font-size: 1.05em;
+            color: #4a5568;
+            margin: 24px 0 10px;
+        }
+        section p {
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+        section ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        section li {
+            font-size: 0.95em;
+            margin-bottom: 6px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .feature-card .icon {
             font-size: 1.6em;
-            border-bottom: 2px solid #4A90D9;
-            padding-bottom: 12px;
+            margin-bottom: 8px;
+        }
+        .feature-card h3 {
+            margin: 0 0 6px 0;
+            font-size: 0.95em;
+            color: #333;
+        }
+        .feature-card p {
+            font-size: 0.85em;
+            color: #666;
+            margin: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 48px 16px;
+        }
+        .cta-section h2 {
+            font-size: 1.3em;
+            border: none;
+            margin-bottom: 12px;
+            padding: 0;
+        }
+        .cta-section p {
+            color: #666;
             margin-bottom: 24px;
         }
-        h2 {
-            font-size: 1.25em;
-            margin-top: 36px;
-            margin-bottom: 12px;
-            padding-left: 8px;
-            border-left: 4px solid #4A90D9;
-            color: #2c3e50;
-        }
-        h3 {
-            font-size: 1.05em;
-            margin-top: 24px;
-            margin-bottom: 8px;
-            color: #4a5568;
-        }
-        p, li { font-size: 0.95em; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 6px; }
-        .info-box {
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 16px 20px;
-            margin: 16px 0;
-        }
-        .info-box table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .info-box th {
-            text-align: left; width: 30%;
-            color: #4a5568; font-weight: 600;
-            padding: 6px 8px; vertical-align: top;
-        }
-        .info-box td { padding: 6px 8px; }
-        .info-box tr + tr { border-top: 1px solid #edf2f7; }
-        .note-box {
-            background: #eef5ff;
-            border-radius: 8px; padding: 12px 16px;
-            margin: 16px 0; font-size: 0.9em;
-        }
-        .note-box strong { color: #2b6cb0; }
-        .warning-box {
-            background: #fff5f5;
-            border-left: 4px solid #e53e3e;
-            border-radius: 4px; padding: 12px 16px;
-            margin: 16px 0; font-size: 0.9em;
-        }
-        hr {
-            border: none; border-top: 1px solid #ddd;
-            margin: 32px 0;
-        }
-        .badge {
+        .appstore-button {
             display: inline-block;
-            background: #4A90D9; color: #fff;
-            font-size: 0.75em; padding: 2px 8px;
-            border-radius: 10px; margin-left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.0em;
+            transition: opacity 0.2s;
+        }
+        .appstore-button:hover { opacity: 0.85; }
+
+        .privacy-box {
+            background: #eef5ff;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 24px 0;
+            font-size: 0.9em;
+        }
+        .privacy-box h3 {
+            color: #2b6cb0;
+            margin: 0 0 8px 0;
+        }
+        .privacy-box p { margin: 0; }
+
+        .medical-note {
+            background: #fff8f0;
+            border-left: 4px solid #ed8936;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin: 24px 0;
+            font-size: 0.9em;
+        }
+
+        footer {
+            text-align: center;
+            color: #aaa;
+            font-size: 0.8em;
+            padding: 40px 16px;
+        }
+        footer a {
+            color: #888;
+            text-decoration: none;
+        }
+        footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 640px) {
+            .feature-grid { grid-template-columns: 1fr; }
+            .header { padding: 48px 16px 40px; }
+            .header h1 { font-size: 1.6em; }
+            header img { width: 90px; height: 90px; }
+            section { padding: 24px 18px; }
         }
     </style>
 </head>
 <body>
 
-<h1>OkusuriMate（おくすりメイト）<br>App Store 審査提出用マーケティング情報</h1>
+<!-- ========================= HEADER ========================= -->
+<header class="header">
+    <img src="../Icon/AppIcon Exports/AppIcon-iOS-Default-1024x1024@1x.png" alt="OkusuriMate アイコン" onerror="this.style.display='none'">
+    <h1>OkusuriMate</h1>
+    <p class="subtitle">おくすりメイト - 服薬リマインダー＆管理</p>
+    <div class="badges">
+        <span class="badge">アカウント登録不要</span>
+        <span class="badge">オフライン対応</span>
+        <span class="badge">家族管理対応</span>
+    </div>
+</header>
 
-<div class="warning-box">
-    <strong>Apple App Store Review Guidelines 準拠確認</strong>
-    <p style="margin: 8px 0 0 0;">
-        本アプリは「日常的な服薬管理の補助ツール」であり、医学的な診断・治療を提供するものではありません（Guideline 5.1.3 準拠）。
-        服薬データはすべて端末内に保存され、外部送信は一切行いません（Guideline 5.1.1 準拠）。
-    </p>
-</div>
+<div class="container">
 
-<!-- ============================================================ -->
-<h2>基本情報</h2>
+    <!-- ========================= イントロ ========================= -->
+    <section>
+        <h2>毎日の服薬を、シンプルに管理。</h2>
+        <p>
+            OkusuriMate（おくすりメイト）は、薬の飲み忘れを防ぐための服薬リマインダーアプリです。
+            複数の薬を登録し、時間指定または食前・食後などの条件で通知を設定するだけ。
+            服用記録は自動で保存され、カレンダーや達成率グラフでいつでも振り返れます。
+        </p>
+        <p>
+            難しい設定やアカウント登録は一切不要。
+            ダウンロードしてすぐに使い始められます。
+        </p>
+    </section>
 
-<div class="info-box">
-    <table>
-        <tr><th>アプリ名</th><td>OkusuriMate（おくすりメイト）</td></tr>
-        <tr><th>プライマリカテゴリ</th><td>メディカル（Medical）</td></tr>
-        <tr><th>セカンダリカテゴリ</th><td>ヘルスケア／フィットネス（Health &amp; Fitness）</td></tr>
-        <tr><th>レーティング</th><td>4+（全年齢対象）</td></tr>
-        <tr><th>対応OS</th><td>iOS 17.6 以上（iPhone専用）</td></tr>
-        <tr><th>対応言語</th><td>日本語</td></tr>
-        <tr><th>価格モデル</th><td>無料ダウンロード<br>アプリ内課金（IAP）: 広告削除（非消耗型、¥800）</td></tr>
-        <tr><th>アカウント</th><td>不要（ユーザー登録・ログインなし）</td></tr>
-        <tr><th>オフライン動作</th><td>全機能がオフラインで動作（インターネット接続不要）</td></tr>
-        <tr><th>開発者</th><td>wang xiaojing</td></tr>
-        <tr><th>著作権</th><td>© 2026 wang xiaojing</td></tr>
-    </table>
-</div>
+    <!-- ========================= 機能一覧 ========================= -->
+    <section>
+        <h2>主な機能</h2>
+        <div class="feature-grid">
 
-<!-- ============================================================ -->
-<h2>1. サブタイトル（30文字以内）</h2>
+            <div class="feature-card">
+                <div class="icon">🔔</div>
+                <h3>服用リマインダー</h3>
+                <p>時刻指定・条件指定（食前・食後・起床時・就寝前）で柔軟に通知を設定。生活パターンに連動して通知時刻を自動調整します。</p>
+            </div>
 
-<div class="info-box">
-    <p><strong>服薬リマインダー＆管理</strong></p>
-</div>
+            <div class="feature-card">
+                <div class="icon">📝</div>
+                <h3>1タップ服用記録</h3>
+                <p>「飲んだ」「スキップ」をワンタップ。飲み忘れは自動検出され、フォローアップ通知でお知らせします。</p>
+            </div>
 
-<!-- ============================================================ -->
-<h2>2. 説明文（4,000文字以内）</h2>
+            <div class="feature-card">
+                <div class="icon">📅</div>
+                <h3>カレンダー・統計</h3>
+                <p>服用状況を月間カレンダーで色分け表示。達成率を週間・月間グラフで可視化します。</p>
+            </div>
 
-<div class="info-box">
-    <h3>毎日の服薬を、シンプルに管理。</h3>
+            <div class="feature-card">
+                <div class="icon">💊</div>
+                <h3>薬の登録・管理</h3>
+                <p>名前・服用量・タイミング・写真（最大3枚）・用法・メモを登録。在庫管理や残数警告通知にも対応。</p>
+            </div>
 
-    <p>
-        OkusuriMate（おくすりメイト）は、薬の飲み忘れを防ぐための服薬リマインダーアプリです。
-        複数の薬を登録し、時間指定または食前・食後などの条件で通知を設定するだけ。
-        服用記録は自動で保存され、カレンダーや達成率グラフで確認できます。
-    </p>
+            <div class="feature-card">
+                <div class="icon">👨‍👩‍👧</div>
+                <h3>家族の薬もまとめて管理</h3>
+                <p>プロファイルごとに薬・服用履歴・緊急情報を分離。ワンタップで切替可能。1台のiPhoneで家族全員分をカバー。</p>
+            </div>
 
-    <p>
-        難しい設定やアカウント登録は一切不要。
-        ダウンロードしてすぐに使い始められます。
-    </p>
+            <div class="feature-card">
+                <div class="icon">🆘</div>
+                <h3>緊急情報カード</h3>
+                <p>服用中の薬・アレルギー・既往歴・血液型・緊急連絡先を1枚に集約。ロック画面表示にも対応。</p>
+            </div>
 
-    <h3>主な機能</h3>
+            <div class="feature-card">
+                <div class="icon">☁️</div>
+                <h3>データバックアップ</h3>
+                <p>iCloud Drive にデータを保存・復元可能。機種変更時も安心してデータを引き継げます。</p>
+            </div>
 
-    <p><strong>服用リマインダー（通知）</strong></p>
-    <ul>
-        <li>薬ごとに個別の通知時間を設定可能</li>
-        <li>時刻指定（例: 8:00、20:00）または条件指定（食前・食後・起床時・就寝前）に対応</li>
-        <li>条件指定はユーザーの生活パターン（起床・食事・就寝時刻）に連動して自動調整</li>
-        <li>飲み忘れを自動検出し、フォローアップ通知でお知らせ</li>
-        <li>夜間は自動的に通知を抑制（設定で変更可能）</li>
-    </ul>
+            <div class="feature-card">
+                <div class="icon">🌙</div>
+                <h3>夜間通知抑制</h3>
+                <p>夜間の通知を自動抑制。生活パターンの設定に応じて、通知を最適化します。</p>
+            </div>
 
-    <p><strong>服用記録（ログ）</strong></p>
-    <ul>
-        <li>「飲んだ」「スキップ」を1タップで記録</li>
-        <li>飲み忘れは自動検出され記録</li>
-        <li>過去の履歴はカレンダー画面で月間・日別に色分け表示</li>
-        <li>達成率を週間・月間グラフで可視化</li>
-    </ul>
+        </div>
+    </section>
 
-    <p><strong>薬の登録・管理</strong></p>
-    <ul>
-        <li>名前・服用量・タイミング（複数設定可）・写真（最大3枚）・用法・メモを登録</li>
-        <li>在庫管理機能：初期在庫・消費に応じた残数計算・しきい値警告</li>
-        <li>同一薬名の重複登録を防止</li>
-    </ul>
+    <!-- ========================= 利用シーン ========================= -->
+    <section>
+        <h2>こんな方におすすめ</h2>
+        <ul>
+            <li>毎日複数の薬を飲んでいる方の飲み忘れ防止に</li>
+            <li>家族の服薬管理をしたい方に（プロファイル切替で家族分も管理）</li>
+            <li>高齢者の服薬サポートに（シンプルな操作画面・大きなタップ領域）</li>
+            <li>旅行先など、環境が変わっても服用習慣を維持したい方に</li>
+            <li>サプリメント常用者にも</li>
+        </ul>
+    </section>
 
-    <p><strong>複数プロファイル（家族対応）</strong></p>
-    <ul>
-        <li>プロファイルごとに薬・服用履歴・緊急情報を分離管理</li>
-        <li>ホーム画面のプロファイル名タップでワンタッチ切替</li>
-        <li>1台のiPhoneで家族全員の服薬管理をカバー</li>
-    </ul>
+    <!-- ========================= 広告削除 ========================= -->
+    <section>
+        <h2>広告削除（アプリ内課金）</h2>
+        <p>
+            アプリ内のバナー広告は、一度の購入（¥800）で永続的に非表示にできます。
+            購入はApple IDに紐付くため、端末変更時も無料で復元可能です。
+        </p>
+        <p>購入しなくても、すべての服薬管理機能を無料でご利用いただけます。</p>
+    </section>
 
-    <p><strong>緊急情報カード</strong></p>
-    <ul>
-        <li>服用中の薬・アレルギー・既往歴・血液型・緊急連絡先を1枚に集約</li>
-        <li>「かかりつけ医に見せる」ボタンで文字を拡大表示</li>
-        <li>ロック画面表示モード対応</li>
-    </ul>
-
-    <p><strong>データバックアップ・リストア</strong></p>
-    <ul>
-        <li>iCloud Drive にデータを保存・復元可能</li>
-        <li>機種変更時も安心してデータを引き継げます</li>
-    </ul>
-
-    <h3>利用シーン</h3>
-    <ul>
-        <li>毎日複数の薬を飲んでいる方の飲み忘れ防止に</li>
-        <li>家族の服薬管理をしたい方に（プロファイル切替で家族分もまとめて管理）</li>
-        <li>高齢者の服薬サポートに（シンプルな操作画面・大きなタップ領域）</li>
-        <li>旅行先など、環境が変わっても服用習慣を維持したい方に</li>
-    </ul>
-
-    <div class="note-box">
-        <strong>プライバシー</strong><br>
-        すべてのデータはお使いの端末内にのみ保存されます。外部サーバーに情報が送信されることは一切ありません。
-        アカウント登録も不要です。
+    <!-- ========================= プライバシー ========================= -->
+    <div class="privacy-box">
+        <h3>プライバシー</h3>
+        <p>すべてのデータはお使いの端末内にのみ保存されます。外部サーバーに情報が送信されることは一切ありません。アカウント登録も不要です。</p>
     </div>
 
-    <div class="warning-box">
+    <!-- ========================= 医学的注意 ========================= -->
+    <div class="medical-note">
         <strong>医学的注意事項</strong><br>
         本アプリは服薬をリマインドするものであり、医学的な診断・治療・助言を提供するものではありません。
         服薬の判断は必ず医師の指示に従ってください。
     </div>
+
+    <!-- ========================= CTA ========================= -->
+    <div class="cta-section">
+        <h2>ダウンロードはこちら</h2>
+        <p>無料ダウンロード。アカウント不要、すぐに使えます。</p>
+        <a href="#" class="appstore-button">App Store で見る</a>
+    </div>
+
 </div>
 
-<!-- ============================================================ -->
-<h2>3. プロモーションテキスト（170文字以内）</h2>
-
-<div class="info-box">
-    <p>薬の飲み忘れを防止する服薬リマインダーアプリです。時刻指定・条件指定の通知、服用記録、カレンダー表示、在庫管理、複数プロファイル（家族管理）に対応。アカウント不要ですぐに使えます。</p>
-</div>
-
-<!-- ============================================================ -->
-<h2>4. 検索キーワード（100文字以内）</h2>
-
-<div class="info-box">
-    <p>薬,薬管理,服薬,服薬管理,お薬,リマインダー,服用,飲み忘れ,通知,健康管理,介護,家族,緊急情報,救急,アレルギー,在庫管理,服用記録,医療</p>
-</div>
-
-<!-- ============================================================ -->
-<h2>5. スクリーンショット用キャプション</h2>
-
-<div class="info-box">
-    <table>
-        <tr><th style="width: 50px;">#</th><th style="width: 25%;">画面</th><th>キャプション</th></tr>
-        <tr><td>1</td><td>ホーム画面</td><td>今日の服用予定をひと目で確認</td></tr>
-        <tr><td>2</td><td>薬の登録画面</td><td>薬の名前・タイミング・写真を登録</td></tr>
-        <tr><td>3</td><td>通知/リマインダー</td><td>決まった時間にプッシュ通知でお知らせ</td></tr>
-        <tr><td>4</td><td>カレンダー履歴</td><td>カレンダーで服用状況を色分け表示</td></tr>
-        <tr><td>5</td><td>複数プロファイル</td><td>家族の薬もひとつのアプリで管理</td></tr>
-        <tr><td>6</td><td>緊急情報カード</td><td>緊急時に必要な情報をすぐに提示</td></tr>
-    </table>
-</div>
-
-<!-- ============================================================ -->
-<h2>6. リリースノート（What's New）</h2>
-
-<div class="info-box">
-    <p><strong>バージョン 1.0.0（初回リリース）</strong></p>
-    <ul>
-        <li>服薬リマインダー通知（時刻指定・条件指定）</li>
-        <li>服用記録（1タップで記録／スキップ）</li>
-        <li>カレンダー表示（月間・日別、色分け表示）</li>
-        <li>週間・月間達成率グラフ</li>
-        <li>薬の登録・編集・削除（写真・用法・メモ対応）</li>
-        <li>在庫管理・残数警告通知</li>
-        <li>複数プロファイル（家族管理）</li>
-        <li>緊急情報カード（ロック画面表示対応）</li>
-        <li>データバックアップ・リストア（iCloud Drive）</li>
-        <li>広告削除（アプリ内課金、非消耗型）</li>
-    </ul>
-</div>
-
-<!-- ============================================================ -->
-<h2>7. アプリ内課金（IAP）</h2>
-
-<div class="info-box">
-    <table>
-        <tr><th>製品ID</th><td>OkusuriMate</td></tr>
-        <tr><th>表示名（顧客向け）</th><td>広告を非表示にする</td></tr>
-        <tr><th>価格</th><td>¥800（日本ストア）</td></tr>
-        <tr><th>タイプ</th><td>非消耗型（Non-Consumable）</td></tr>
-        <tr><th>説明</th><td>アプリ内のすべてのバナー広告を一度の購入で永続的に非表示にします。Apple IDに紐付くため、端末変更時も「購入をリストア」で復元可能です。</td></tr>
-        <tr><th>基本機能への影響</th><td>なし。購入しなくてもすべての服薬管理機能をご利用いただけます。</td></tr>
-    </table>
-</div>
-
-<!-- ============================================================ -->
-<h2>8. 審査ガイドライン対応確認</h2>
-
-<div class="info-box">
-    <h3>Guideline 5.1.1（健康データ）</h3>
-    <ul>
-        <li>すべての健康データは端末内にのみ保存（SwiftData / UserDefaults）</li>
-        <li>外部サーバーへのデータ送信は一切なし</li>
-        <li>iCloud Drive へのバックアップはユーザーの明示的操作時のみ</li>
-    </ul>
-
-    <h3>Guideline 5.1.3（医療・健康アプリ）</h3>
-    <ul>
-        <li>医学的な診断・治療を提供するものではないことをアプリ内の設定画面に明記</li>
-        <li>「服薬の判断は必ず医師の指示に従ってください」という注意書きを表示</li>
-        <li>「日常的な健康管理の利便性向上」を目的としていることを明示</li>
-    </ul>
-
-    <h3>Guideline 3.1.1（アプリ内課金）</h3>
-    <ul>
-        <li>広告削除は非消耗型 IAP として実装</li>
-        <li>購入しなくてもアプリの全基本機能を利用可能</li>
-        <li>購入状態のリストア機能を実装済み（StoreKit の AppStore.sync()）</li>
-    </ul>
-</div>
-
-<!-- ============================================================ -->
-<h2>9. 問い合わせ先</h2>
-
-<div class="info-box">
-    <table>
-        <tr><th>開発者名</th><td>wang xiaojing</td></tr>
-        <tr><th>サポートメール</th><td><a href="mailto:appinfo_applestore@yahoo.co.jp">appinfo_applestore@yahoo.co.jp</a></td></tr>
-        <tr><th>プライバシーポリシーURL</th><td><a href="https://okusurimate.info/privacy-policy.html" target="_blank" rel="noopener">https://okusurimate.info/privacy-policy.html</a></td></tr>
-        <tr><th>サポートURL</th><td><a href="https://okusurimate.info/support.html" target="_blank" rel="noopener">https://okusurimate.info/support.html</a></td></tr>
-        <tr><th>デベロッパWebサイト</th><td><a href="https://okusurimate.info/" target="_blank" rel="noopener">https://okusurimate.info/</a></td></tr>
-    </table>
-</div>
-
-<!-- ============================================================ -->
-
-<p style="text-align: center; color: #aaa; font-size: 0.85em; margin-top: 40px;">
-    &copy; 2026 wang xiaojing. All rights reserved.
-</p>
+<!-- ========================= FOOTER ========================= -->
+<footer>
+    <p>
+        <a href="https://okusurimate.info/privacy-policy.html">プライバシーポリシー</a>
+        &nbsp;|&nbsp;
+        <a href="https://okusurimate.info/support.html">サポート</a>
+        &nbsp;|&nbsp;
+        <a href="https://okusurimate.info/">デベロッパWebサイト</a>
+    </p>
+    <p style="margin-top: 12px;">&copy; 2026 wang xiaojing. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
